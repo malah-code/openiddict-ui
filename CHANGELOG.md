@@ -1,4 +1,7 @@
 # Changelog
+## [1.10.0] - 2023-10-08
+
+ - downgrade to dotnet 6, the latest stable long support version of dotnet.
 
 ## [1.9.0] - 2023-02-23
 
@@ -16,7 +19,7 @@
 
 ### Changed
 
-- support for .net7.0
+- support for .net6.0
 
 ### Removed
 
