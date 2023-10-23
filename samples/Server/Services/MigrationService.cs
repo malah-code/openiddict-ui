@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using OpenIddict.Abstractions;
 using Server.Helpers;
 using Server.Models;
-using tomware.OpenIddict.UI.Identity.Infrastructure;
 using tomware.OpenIddict.UI.Infrastructure;
 using tomware.OpenIddict.UI.Suite.Core;
 using static OpenIddict.Abstractions.OpenIddictConstants;
@@ -33,9 +32,6 @@ public class MigrationService : IMigrationService
 
     var uiContext = scope.ServiceProvider.GetRequiredService<OpenIddictUIContext>();
     await uiContext.Database.MigrateAsync();
-
-    var uiIdentityContext = scope.ServiceProvider.GetRequiredService<OpenIddictUIIdentityContext>();
-    await uiIdentityContext.Database.MigrateAsync();
 
     await RegisterApplicationsAsync(scope.ServiceProvider);
     await RegisterScopesAsync(scope.ServiceProvider);

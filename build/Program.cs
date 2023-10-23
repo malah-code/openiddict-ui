@@ -20,10 +20,7 @@ internal static class Program
     "OpenIddict.UI.Suite.Core",
     "OpenIddict.UI.Suite.Api",
     "OpenIddict.UI.Infrastructure",
-    "OpenIddict.UI.Api",
-    "OpenIddict.UI.Identity.Core",
-    "OpenIddict.UI.Identity.Infrastructure",
-    "OpenIddict.UI.Identity.Api"
+    "OpenIddict.UI.Api"
   };
 
   private static class Targets

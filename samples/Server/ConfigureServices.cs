@@ -7,8 +7,6 @@ using Quartz;
 using Server.Models;
 using Server.Services;
 using tomware.OpenIddict.UI.Api;
-using tomware.OpenIddict.UI.Identity.Api;
-using tomware.OpenIddict.UI.Identity.Infrastructure;
 using tomware.OpenIddict.UI.Infrastructure;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
@@ -185,25 +183,7 @@ public static class ConfigureServices
           Permissions.Prefixes.Scope + "server_scope",
           Permissions.Prefixes.Scope + "api_scope"
         };
-      })
-      // Register the EF based UI Store for the ASP.NET Identity related entities.
-      .AddUIIdentityStore<ApplicationUser>(options =>
-      {
-        options.OpenIddictUIIdentityContext = builder =>
-        {
-          builder.UseSqlite(configuration.GetConnectionString("DefaultConnection"),
-            sql =>
-            {
-              sql.MigrationsAssembly(typeof(Program)
-                                    .GetTypeInfo()
-                                    .Assembly
-                                    .GetName()
-                                    .Name);
-            });
-        };
-      })
-      // Register the APIs for the EF based UI Store based on ASP.NET Identity.
-      .AddUIIdentityApis<ApplicationUser>();
+      });
 
     if (!Helpers.Constants.IsTestingEnvironment(environmentName))
     {

@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OpenIddict.Server;
 using Server.Models;
-using tomware.OpenIddict.UI.Identity.Infrastructure;
 using tomware.OpenIddict.UI.Infrastructure;
 using tomware.OpenIddict.UI.Suite.Core;
 using static OpenIddict.Abstractions.OpenIddictConstants;
@@ -32,7 +31,6 @@ public class IntegrationApplicationFactory<TEntryPoint>
     {
       FixDbContext<ApplicationDbContext>(services);
       FixDbContext<OpenIddictUIContext>(services);
-      FixDbContext<OpenIddictUIIdentityContext>(services);
 
       var sp = services.BuildServiceProvider();
       AccessToken = GetAccessToken(sp);
